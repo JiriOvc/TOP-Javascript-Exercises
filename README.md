@@ -1,2 +1,2 @@
-# TOP-Exercises
-The Odin Project exercises
+# TOP Javascript Exercises
+The Odin Project javascript exercises
