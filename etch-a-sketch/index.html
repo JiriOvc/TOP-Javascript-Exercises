@@ -6,14 +6,19 @@
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="flex column jc-center ai-center">
+
+    <div class="edge"></div>
     <div class="header flex jc-center ai-center"><h1>Etch-a-Sketch</h1></div>
+    
     <div class="container flex column jc-center ai-center">
-        <button class="grid-size-btn">Select Grid Size</button>
-        <div class="grid-container"></div>
+        <div class="grid-container flex jc-center ai-center"></div>
         <div class="knob knob-left"></div>
         <div class="knob knob-right"></div>
+        <button class="btn grid-size">Grid Size</button>
+        <button class="btn erase">Erase</button>
     </div>
+    <div class="edge"></div>
 
     <script src="etch.js"></script>
 </body>

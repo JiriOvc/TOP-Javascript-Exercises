@@ -4,6 +4,11 @@
     padding: 0;
     overflow-y: hidden;
     overflow-x: hidden;
+    border: 1px solid black;
+}
+
+body {
+    background-color: black;;
 }
 
 .flex {
@@ -22,34 +27,58 @@
     align-items: center;
 }
 
-.container {
-    width: 100vw;
-    height: 90vh;
-    background: red;
+.edge {
+    width: 80vw;
+    height: 2.5vh;
 }
 
 .header {
-    width: 100vw;
+    width: 80vw;
     height: 10vh;
     background-color: red;
     color: yellow;
     font-size: 2rem;
+    border-radius: 100px 100px 0px 0px;
 }
-.grid-size-btn {
-    position: relative;
-    top: -10%;
-    width: 350px;
+
+.container {
+    width: 80vw;
+    height: 85vh;
+    background: red;
+    border-radius: 0px 0px 100px 100px;
+}
+
+.grid-container {
+    position: absolute;
+    top: 25vh;
+    width: 55vw;
+    height: 50vh;
+    background-color: lightgray;
+    box-shadow: inset 0px 0px 20px;
+    
+}
+
+.btn {
+    width: 150px;
     height: 50px;
     font-size: 1.5rem;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 25px;
     box-shadow: 5px 5px 5px;
 }
-.grid-container {
-    width: 800px;
-    height: 450px;
-    background-color: lightgray;
+
+.grid-size {
+    position: absolute;
+    bottom: 10vh;
+    left: 33vw;
 }
+
+.erase {
+    position: absolute;
+    bottom: 10vh;
+    right: 33vw;
+}
+
 
 .knob {
     width: 125px;
@@ -60,15 +89,15 @@
 }
 
 .knob-left {
-    position: fixed;
-    bottom: 20px;
-    left: 50px;
+    position: absolute;
+    bottom: 5vh;
+    left: 15%;
     box-shadow: 10px 10px 10px black
 }
 
 .knob-right {
-    position: fixed;
-    bottom: 20px;
-    right: 50px;
+    position: absolute;
+    bottom: 5vh;
+    right: 15%;
     box-shadow: 10px 10px 10px black
 }
