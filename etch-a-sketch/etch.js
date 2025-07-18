@@ -1,6 +1,6 @@
 let gridContainer = document.querySelector("#grid-container");
 let square = document.createElement("div");
-let squareNum = 5;
+let squareNum = 33;
 
 let squareSize = gridContainer.clientWidth / squareNum;
 
