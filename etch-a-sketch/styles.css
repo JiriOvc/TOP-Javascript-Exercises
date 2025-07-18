@@ -4,7 +4,7 @@
     padding: 0;
     overflow-y: hidden;
     overflow-x: hidden;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 body {
@@ -39,6 +39,7 @@ body {
     color: yellow;
     font-size: 2rem;
     border-radius: 100px 100px 0px 0px;
+    align-items: flex-end;
 }
 
 .container {
@@ -50,7 +51,7 @@ body {
 
 .grid-container {
     position: absolute;
-    top: 25vh;
+    top: 20vh;
     width: 55vw;
     height: 50vh;
     background-color: lightgray;
@@ -69,20 +70,20 @@ body {
 
 .grid-size {
     position: absolute;
-    bottom: 10vh;
-    left: 33vw;
+    bottom: 15vh;
+    /* left: 33vw; */
 }
 
 .erase {
     position: absolute;
-    bottom: 10vh;
-    right: 33vw;
+    bottom: 8vh;
+    /* right: 33vw; */
 }
 
 
 .knob {
-    width: 125px;
-    height: 125px;
+    width: 150px;
+    height: 150px;
     background-color: white;
     border: 0px solid white;
     border-radius: 100%;
