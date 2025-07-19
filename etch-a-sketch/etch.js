@@ -13,7 +13,7 @@ gridSizeBtn.addEventListener("click", () => {
 
 // Create Grid
 function createGrid(squareNum) {
-    squareNum = 0;
+    gridContainer.innerHTML = "";
     squareNum = prompt("Set number of squares in top row. Ideally between 30 - 50");
 
     // Calculate Square Size
