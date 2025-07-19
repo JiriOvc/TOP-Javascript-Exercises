@@ -2,15 +2,19 @@
 // Default Grid Size
 let gridContainer = document.querySelector("#grid-container");
 let square = document.createElement("div");
-let squareNum = 20;
+let squareNum = 30;
 
 // Change Grid Size Button
 let gridSizeBtn = document.querySelector(".grid-size")
 
+function getGridSize() {
+    return squareNum = prompt("Set number of squares in top row. Ideally between 10 - 40")
+}
+
 // Calculate Square Size
 let squareSize = gridContainer.clientWidth / squareNum;
 
-// Crate Grid
+// Create Grid
 for (let i = 1; i <= squareNum * squareNum; i++) {
     let gridContainer = document.querySelector("#grid-container");
     let square = document.createElement("div");
@@ -22,4 +26,8 @@ for (let i = 1; i <= squareNum * squareNum; i++) {
 
 // Change Square Color on Mouse Enter
 
+
 // Erase Grid
+
+getGridSize()
+console.log(squareNum)
