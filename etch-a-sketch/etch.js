@@ -7,15 +7,14 @@ let squareNum = 30;
 // Change Grid Size Button
 let gridSizeBtn = document.querySelector(".grid-size")
 
-function getGridSize() {
-    return squareNum = prompt("Set number of squares in top row. Ideally between 30 - 50");
-}
-
-gridSizeBtn.addEventListener("click", createGrid);
+gridSizeBtn.addEventListener("click", () => {
+    createGrid();
+})
 
 // Create Grid
-function createGrid() {
-    squareNum = getGridSize();
+function createGrid(squareNum) {
+    squareNum = 0;
+    squareNum = prompt("Set number of squares in top row. Ideally between 30 - 50");
 
     // Calculate Square Size
     let squareSize = gridContainer.clientWidth / squareNum;
@@ -31,8 +30,11 @@ function createGrid() {
 
 }
 
+
+
+
+
 // Change Square Color on Mouse Enter
 
 
 // Erase Grid
-console.log(squareNum)
