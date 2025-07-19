@@ -1,8 +1,16 @@
+
+// Default Grid Size
 let gridContainer = document.querySelector("#grid-container");
 let square = document.createElement("div");
-let squareNum = 15;
+let squareNum = 20;
+
+// Change Grid Size Button
+let gridSizeBtn = document.querySelector(".grid-size")
+
+// Calculate Square Size
 let squareSize = gridContainer.clientWidth / squareNum;
 
+// Crate Grid
 for (let i = 1; i <= squareNum * squareNum; i++) {
     let gridContainer = document.querySelector("#grid-container");
     let square = document.createElement("div");
@@ -12,15 +20,6 @@ for (let i = 1; i <= squareNum * squareNum; i++) {
     square.style.height = Math.floor(squareSize) + "px";
 }
 
-console.log(gridContainer.clientWidth);
-console.log(gridContainer.clientHeight);
-console.log(squareSize);
+// Change Square Color on Mouse Enter
 
-// Grid Size button
-let gridSizeBtn = document.querySelector(".grid-size")
-gridSizeBtn.addEventListener("click", () => {
-   prompt("How many squares do you want in the top row?")
-   return squareNum
-})
-
-console.log(squareNum)
+// Erase Grid
