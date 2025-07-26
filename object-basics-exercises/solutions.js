@@ -55,5 +55,35 @@ console.log(factorial2(10))
 
 // Exercise 2: Palindromes
 
+function palindromes(word) {
+    let normal = 
+    word
+    .toLowerCase()
+    .split("")
+    .filter((char => /[a-zA-Z0-9]/.test(char)))
+    .join("");
 
+    let backwards = 
+    word
+    .toLowerCase()
+    .split("")
+    .filter((char => /[a-zA-Z0-9]/.test(char)))
+    .reverse()
+    .join("");
+
+    console.log(normal)
+    console.log(backwards)
+
+    if (normal === backwards) {
+        return true
+    } else {
+        return false
+    }
+
+}
+
+console.log(palindromes("Racecar"))
+console.log(palindromes("A car, a man, a maraca."))
+console.log(palindromes("Animal loots foliated detail of stool lamina."))
+console.log(palindromes("ZZZZ car, a man, a maracaz."))
 
