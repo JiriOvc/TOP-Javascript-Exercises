@@ -91,4 +91,26 @@ console.log(palindromes("Animal loots foliated detail of stool lamina."))
 console.log("--Test 4--")
 console.log(palindromes("ZZZZ car, a man, a maracaz."))
 
-// Exercise 3: 
+// Exercise 3: Fibonacci
+
+console.log("")
+console.log("Exercise 3: Fibonacci")
+
+function fibonacci(position) {
+    if (position == 0) return console.log("0");
+
+    if (position < 0) return console.log("Please use positive numbers only.");
+
+    if (position > 0) {
+    let fib = [0, 1]
+
+        for (let i = 2; i <= position; i++){
+        fib[i] = fib[i-1] + fib[i-2]
+        };
+
+        console.log(`Fibonacci sequence until chosen position: ${fib}`);
+        console.log(fib[position]);
+    }
+}
+
+fibonacci(10);
