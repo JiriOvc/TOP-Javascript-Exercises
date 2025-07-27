@@ -24,7 +24,7 @@ let operandB = 0;
 
 
 // Step 3: Calculate function
-function calculate(operandA, operator, operandB) {
+function operate(operandA, operator, operandB) {
     if(operator === "+") {
         return add(operandA, operandB)
     }
@@ -41,7 +41,7 @@ function calculate(operandA, operator, operandB) {
 
 
 operandA = 10;
-operator = "+";
-operandB = 4;
+operator = "/";
+operandB = 5;
 
-console.log(calculate(operandA, operator, operandB))
+console.log(operate(operandA, operator, operandB))
