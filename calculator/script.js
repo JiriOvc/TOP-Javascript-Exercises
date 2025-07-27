@@ -46,27 +46,46 @@ operandB = 5;
 
 console.log(operate(operandA, operator, operandB));
 
+let display = document.querySelector(".display-area")
 
 
 let btnOne = document.querySelector(".btn-one");
 btnOne.addEventListener("click", () => {
-    operandA = 1
-    return console.log(`Operand A is ${operandA}`)
+    let number = document.createElement("div")
+    number.textContent = 1;
+    display.appendChild(number)
+    displayContent = display.textContent
+    console.log(displayContent)
 });
 
 let btnTwo = document.querySelector(".btn-two");
 btnTwo.addEventListener("click", () => {
-    operandB = 2
-    return console.log(operandB)
+    let number = document.createElement("div")
+    number.textContent = 2;
+    display.appendChild(number)
+    displayContent = display.textContent
+    console.log(displayContent)
 });
 
 let btnPlus = document.querySelector(".btn-plus");
 btnPlus.addEventListener("click", () => {
-    operator = "+"
-    return console.log(operator)
+    let number = document.createElement("div")
+    number.textContent = ` + `;
+    display.appendChild(number)
+    displayContent = display.textContent
+    console.log(displayContent)
+});
+
+let btnClear = document.querySelector(".btn-clear");
+btnClear.addEventListener("click", () => {
+    display.textContent = "";
 });
 
 let btnEqual = document.querySelector(".btn-equal");
 btnEqual.addEventListener("click", () => {
     console.log(operate(operandA, operator, operandB))
 });
+
+let displayContent = display.textContent
+displayContent = display.textContent
+console.log(displayContent)
