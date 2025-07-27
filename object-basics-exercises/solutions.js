@@ -160,21 +160,20 @@ const people = [
       },
     ]
 
+
+
+function addAgeProperty(array){
+for (let i = 0; i < array.length; i++) {
+array[i].age = array[i].yearOfDeath - array[i].yearOfBirth
+}
+}
+
+
 function findTheOldest(array) {
-
-    // Add "age" property
-
-    for(let i = 0; i <= array.length; i++) {
-        age = array[i].yearOfDeath - array[i].yearOfBirth;
-        return array.forEach(function (array) {
-        array.age = age;
-        });
-    };
-
     
 }
 
-findTheOldest(people)
+addAgeProperty(people)
 console.log(people[0])
 console.log(people[1])
 console.log(people[2])
