@@ -166,13 +166,12 @@ function addAgeProperty(array) {
 
 for (let i = 0; i < array.length; i++) {
     if (!array[i].yearOfDeath) {
-    array[i].age = new Date().getFullYear() - array[i].yearOfBirth;
+        array[i].age = new Date().getFullYear() - array[i].yearOfBirth;
     } else {
-    array[i].age = array[i].yearOfDeath - array[i].yearOfBirth
+        array[i].age = array[i].yearOfDeath - array[i].yearOfBirth
     }
     }
 }
-
 
 function findTheOldest(array) {
     array.sort((a, b) => a.age - b.age)
@@ -190,6 +189,7 @@ findTheOldest(people)
 console.log(people[0])
 console.log(people[1])
 console.log(people[2])
+
 
 
 
