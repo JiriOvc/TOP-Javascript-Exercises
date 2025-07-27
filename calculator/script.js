@@ -23,7 +23,7 @@ let operator = "+-*/";
 let operandB = 0;
 
 
-// Step 3: Calculate function
+// Step 3: Operate function
 function operate(operandA, operator, operandB) {
     if(operator === "+") {
         return add(operandA, operandB)
@@ -44,4 +44,29 @@ operandA = 10;
 operator = "/";
 operandB = 5;
 
-console.log(operate(operandA, operator, operandB))
+console.log(operate(operandA, operator, operandB));
+
+
+
+let btnOne = document.querySelector(".btn-one");
+btnOne.addEventListener("click", () => {
+    operandA = 1
+    return console.log(`Operand A is ${operandA}`)
+});
+
+let btnTwo = document.querySelector(".btn-two");
+btnTwo.addEventListener("click", () => {
+    operandB = 2
+    return console.log(operandB)
+});
+
+let btnPlus = document.querySelector(".btn-plus");
+btnPlus.addEventListener("click", () => {
+    operator = "+"
+    return console.log(operator)
+});
+
+let btnEqual = document.querySelector(".btn-equal");
+btnEqual.addEventListener("click", () => {
+    console.log(operate(operandA, operator, operandB))
+});
