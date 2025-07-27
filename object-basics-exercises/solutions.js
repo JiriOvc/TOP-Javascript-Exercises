@@ -145,7 +145,7 @@ console.log("Exercise 5: Find the Oldest");
 const people = [
       {
         name: "Carly",
-        yearOfBirth: 1942,
+        yearOfBirth: 1066,
         yearOfDeath: 1970,
       },
       {
@@ -170,14 +170,21 @@ array[i].age = array[i].yearOfDeath - array[i].yearOfBirth
 
 
 function findTheOldest(array) {
-    
+    array.sort((a, b) => a.age - b.age)
+    console.log(array[array.length -1].name)
 }
 
 addAgeProperty(people)
+console.log("Adding age property ")
 console.log(people[0])
 console.log(people[1])
 console.log(people[2])
 
+console.log("Sorted array. The last element is the oldest now which is:")
+findTheOldest(people)
+console.log(people[0])
+console.log(people[1])
+console.log(people[2])
 
 
 
