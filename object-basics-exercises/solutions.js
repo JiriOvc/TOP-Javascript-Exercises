@@ -114,3 +114,72 @@ function fibonacci(position) {
 }
 
 fibonacci(10);
+
+// Exercise 4: Get the Titles!
+
+console.log("");
+console.log("Exercise 4: Get the Titles!");
+
+const books = [
+  {
+    title: 'Book',
+    author: 'Name'
+  },
+  {
+    title: 'Book2',
+    author: 'Name2'
+  }
+];
+
+function getTheTitles(array) {
+    return array.map(item => item.title)
+};
+
+console.log(getTheTitles(books));
+
+// Exercise 5: Find the Oldest
+
+console.log("");
+console.log("Exercise 5: Find the Oldest");
+
+const people = [
+      {
+        name: "Carly",
+        yearOfBirth: 1942,
+        yearOfDeath: 1970,
+      },
+      {
+        name: "Ray",
+        yearOfBirth: 1962,
+        yearOfDeath: 2011,
+      },
+      {
+        name: "Jane",
+        yearOfBirth: 1912,
+        yearOfDeath: 1941,
+      },
+    ]
+
+function findTheOldest(array) {
+
+    // Add "age" property
+
+    for(let i = 0; i <= array.length; i++) {
+        age = array[i].yearOfDeath - array[i].yearOfBirth;
+        return array.forEach(function (array) {
+        array.age = age;
+        });
+    };
+
+    
+}
+
+findTheOldest(people)
+console.log(people[0])
+console.log(people[1])
+console.log(people[2])
+
+
+
+
+
