@@ -145,7 +145,7 @@ console.log("Exercise 5: Find the Oldest");
 const people = [
       {
         name: "Carly",
-        yearOfBirth: 1066,
+        yearOfBirth: 1942,
         yearOfDeath: 1970,
       },
       {
@@ -162,10 +162,15 @@ const people = [
 
 
 
-function addAgeProperty(array){
+function addAgeProperty(array) {
+
 for (let i = 0; i < array.length; i++) {
-array[i].age = array[i].yearOfDeath - array[i].yearOfBirth
-}
+    if (!array[i].yearOfDeath) {
+    array[i].age = new Date().getFullYear() - array[i].yearOfBirth;
+    } else {
+    array[i].age = array[i].yearOfDeath - array[i].yearOfBirth
+    }
+    }
 }
 
 
