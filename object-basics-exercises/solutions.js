@@ -185,7 +185,7 @@ console.log(people[0])
 console.log(people[1])
 console.log(people[2])
 
-console.log("Sorted array. The last element is the oldest now which is:")
+console.log("Sorted array. The last element is the oldest now. The oldest is:")
 findTheOldest(people)
 console.log(people[0])
 console.log(people[1])
