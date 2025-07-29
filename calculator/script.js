@@ -139,14 +139,7 @@ btnNine.addEventListener("click", () => {
 // Operators
 let btnPlus = document.querySelector(".btn-plus");
 btnPlus.addEventListener("click", () => {
-
-    displayContentSplit = displayContent.split(" ");
-    if (displayContentSplit.length === 3) {
-        operandA = parseFloat(displayContentSplit[0], 10);
-        operator = displayContentSplit[1]
-        operandB = parseFloat(displayContentSplit[2], 10);
-        display.textContent = operate(operandA, operator, operandB).toFixed(10).replace(/0+$/, "");
-    }
+    rollingOperator()
     
     console.log(operator)
     let number = document.createElement("div")
@@ -158,13 +151,8 @@ btnPlus.addEventListener("click", () => {
 
 let btnMinus = document.querySelector(".btn-minus");
 btnMinus.addEventListener("click", () => {
-    displayContentSplit = displayContent.split(" ");
-    if (displayContentSplit.length === 3) {
-        operandA = parseFloat(displayContentSplit[0], 10);
-        operator = displayContentSplit[1]
-        operandB = parseFloat(displayContentSplit[2], 10);
-        display.textContent = operate(operandA, operator, operandB).toFixed(10).replace(/0+$/, "");
-    }
+    rollingOperator()
+    
     let number = document.createElement("div")
     number.textContent = ` - `;
     display.appendChild(number)
@@ -174,13 +162,9 @@ btnMinus.addEventListener("click", () => {
 
 let btnMultiply = document.querySelector(".btn-multiply");
 btnMultiply.addEventListener("click", () => {
-    displayContentSplit = displayContent.split(" ");
-    if (displayContentSplit.length === 3) {
-        operandA = parseFloat(displayContentSplit[0], 10);
-        operator = displayContentSplit[1]
-        operandB = parseFloat(displayContentSplit[2], 10);
-        display.textContent = operate(operandA, operator, operandB).toFixed(10).replace(/0+$/, "");
-    }
+
+    rollingOperator()
+
     let number = document.createElement("div")
     number.textContent = ` * `;
     display.appendChild(number)
@@ -190,14 +174,9 @@ btnMultiply.addEventListener("click", () => {
 
 let btnDivide = document.querySelector(".btn-divide");
 btnDivide.addEventListener("click", () => {
-    displayContentSplit = displayContent.split(" ");
 
-    if (displayContentSplit.length === 3) {
-        operandA = parseFloat(displayContentSplit[0], 10);
-        operator = displayContentSplit[1]
-        operandB = parseFloat(displayContentSplit[2], 10);
-        display.textContent = operate(operandA, operator, operandB).toFixed(10).replace(/0+$/, "");
-    }
+    rollingOperator()
+
     let number = document.createElement("div")
     number.textContent = ` / `;
     display.appendChild(number)
@@ -214,24 +193,7 @@ btnClear.addEventListener("click", () => {
 
 let btnEqual = document.querySelector(".btn-equal");
 btnEqual.addEventListener("click", () => {
-    displayContentSplit = displayContent.split(" ");
-    operandA = parseFloat(displayContentSplit[0], 10);
-    operator = displayContentSplit[1]
-    operandB = parseFloat(displayContentSplit[2], 10);
-    
-    console.log(displayContentSplit)
-    console.log(`${operandA} ${operator} ${operandB}`)
-
-    if (displayContentSplit === 1) {
-        display.textContent = operandA
-    }
-
-    if (operandB === 0 && operator === "/") {
-        display.textContent = "Critical hit!"
-    } else {
-        console.log(operate(operandA, operator, operandB))
-        display.textContent = operate(operandA, operator, operandB).toFixed(10).replace(/0+$/, "");
-    }
+    calculate();
 });
 
 let btnPoint = document.querySelector(".btn-point");
@@ -244,4 +206,28 @@ btnPoint.addEventListener("click", () => {
 });
 
 
+function calculate() {
+    displayContentSplit = displayContent.split(" ");
+    operandA = parseFloat(displayContentSplit[0], 10);
+    operator = displayContentSplit[1]
+    operandB = parseFloat(displayContentSplit[2], 10);
+
+    if (displayContentSplit === 1) {
+        display.textContent = operandA
+    }
+
+    if (operandB === 0 && operator === "/") {
+        display.textContent = "Critical hit!"
+    } else {
+        console.log(operate(operandA, operator, operandB))
+        display.textContent = operate(operandA, operator, operandB).toFixed(10).replace(/\.?0+$/, '');
+    }
+}
+
+function rollingOperator() {
+    displayContentSplit = displayContent.split(" ");
+    if (displayContentSplit.length === 3) {
+        calculate()
+    }
+}
 
