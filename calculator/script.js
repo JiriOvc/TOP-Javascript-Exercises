@@ -19,7 +19,7 @@ function divide(a, b) {
 
 // Step 2: Variables for operations
 let operandA = 0;
-let operator = "";
+let operator = " ";
 let operandB = 0;
 
 
@@ -44,144 +44,81 @@ let display = document.querySelector(".display-area");
 let displayContent = display.textContent;
 display.textContent = "";
 
-// Number buttons
+// Digit buttons
 let btnZero = document.querySelector(".btn-zero");
 btnZero.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 0;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(0)
 });
 
 let btnOne = document.querySelector(".btn-one");
 btnOne.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 1;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(1)
 });
 
 let btnTwo = document.querySelector(".btn-two");
 btnTwo.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 2;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(2)
 });
 
 let btnThree = document.querySelector(".btn-three");
 btnThree.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 3;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(3)
 });
 
 let btnFour = document.querySelector(".btn-four");
 btnFour.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 4;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(4)
 });
 
 let btnFive = document.querySelector(".btn-five");
 btnFive.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 5;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(5)
 });
 
 let btnSix = document.querySelector(".btn-six");
 btnSix.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 6;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(6)
 });
 
 let btnSeven = document.querySelector(".btn-seven");
 btnSeven.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 7;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(7)
 });
 
 let btnEight = document.querySelector(".btn-eight");
 btnEight.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 8;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(8)
 });
 
 let btnNine = document.querySelector(".btn-nine");
 btnNine.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = 9;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(9)
 });
 
 
-// Operators
+// Operator buttons
 let btnPlus = document.querySelector(".btn-plus");
 btnPlus.addEventListener("click", () => {
     rollingOperator()
-    
-    console.log(operator)
-    let number = document.createElement("div")
-    number.textContent = ` + `;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(" + ")
 });
 
 let btnMinus = document.querySelector(".btn-minus");
 btnMinus.addEventListener("click", () => {
     rollingOperator()
-    
-    let number = document.createElement("div")
-    number.textContent = ` - `;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(" - ")
 });
 
 let btnMultiply = document.querySelector(".btn-multiply");
 btnMultiply.addEventListener("click", () => {
-
     rollingOperator()
-
-    let number = document.createElement("div")
-    number.textContent = ` * `;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(" * ")
 });
 
 let btnDivide = document.querySelector(".btn-divide");
 btnDivide.addEventListener("click", () => {
-
     rollingOperator()
-
-    let number = document.createElement("div")
-    number.textContent = ` / `;
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(" / ")
 });
 
 
@@ -198,13 +135,11 @@ btnEqual.addEventListener("click", () => {
 
 let btnPoint = document.querySelector(".btn-point");
 btnPoint.addEventListener("click", () => {
-    let number = document.createElement("div")
-    number.textContent = ".";
-    display.appendChild(number)
-    displayContent = display.textContent
-    console.log(displayContent)
+    displayDigitOrOperator(".")
+    
 });
 
+// Supporting Functions
 
 function calculate() {
     displayContentSplit = displayContent.split(" ");
@@ -212,15 +147,11 @@ function calculate() {
     operator = displayContentSplit[1]
     operandB = parseFloat(displayContentSplit[2], 10);
 
-    if (displayContentSplit === 1) {
-        display.textContent = operandA
-    }
-
     if (operandB === 0 && operator === "/") {
         display.textContent = "Critical hit!"
     } else {
         console.log(operate(operandA, operator, operandB))
-        display.textContent = operate(operandA, operator, operandB).toFixed(10).replace(/\.?0+$/, '');
+        display.textContent = operate(operandA, operator, operandB).toFixed(10).replace(/\.?0+$/, '');;
     }
 }
 
@@ -231,3 +162,10 @@ function rollingOperator() {
     }
 }
 
+function displayDigitOrOperator(digitOrOperator) {
+    let number = document.createElement("div")
+    number.textContent = digitOrOperator;
+    display.appendChild(number)
+    displayContent = display.textContent
+    console.log(displayContent)
+}
