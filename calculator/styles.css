@@ -44,6 +44,9 @@
     border: 1px solid black;
     width: 320px;
     height: 80px;
+    font-size: 3em;
+    justify-content: flex-end;
+    padding-right: 10px;
 }
 
 .button-area {
