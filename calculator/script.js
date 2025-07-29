@@ -216,9 +216,13 @@ btnEqual.addEventListener("click", () => {
     operandB = parseInt(displayContentSplit[2], 10);
     
     console.log(displayContentSplit)
-    console.log(`${typeof operandA} ${operator} ${typeof operandB}`)
-    console.log(operate(operandA, operator, operandB))
-    display.textContent = operate(operandA, operator, operandB)
-    console.log(typeof displayContent)
+    console.log(`${operandA} ${operator} ${operandB}`)
+
+    if (operandB === 0 && operator === "/") {
+        display.textContent = "Critical hit!"
+    } else {
+        console.log(operate(operandA, operator, operandB))
+        display.textContent = operate(operandA, operator, operandB)
+    }
 });
 
