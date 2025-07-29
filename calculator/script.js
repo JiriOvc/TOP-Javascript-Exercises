@@ -42,6 +42,7 @@ function operate(operandA, operator, operandB) {
 // Display default settings
 let display = document.querySelector(".display-area");
 let displayContent = display.textContent;
+let displayContentSplit = displayContent.split(" ");
 display.textContent = "";
 
 // Digit buttons
@@ -150,8 +151,7 @@ function calculate() {
     if (operandB === 0 && operator === "/") {
         display.textContent = "Critical hit!"
     } else {
-        console.log(operate(operandA, operator, operandB))
-        display.textContent = operate(operandA, operator, operandB).toFixed(10).replace(/\.?0+$/, '');;
+        display.textContent = operate(operandA, operator, operandB).toFixed(5).replace(/\.?0+$/, '');
     }
 }
 
