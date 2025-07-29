@@ -39,15 +39,12 @@ function operate(operandA, operator, operandB) {
     }
 }
 
-
-operandA = 10;
-operator = "/";
-operandB = 5;
-
+// Display default settings
 let display = document.querySelector(".display-area");
 let displayContent = display.textContent;
 display.textContent = "";
 
+// Number buttons
 let btnOne = document.querySelector(".btn-one");
 btnOne.addEventListener("click", () => {
     let number = document.createElement("div")
@@ -66,8 +63,17 @@ btnTwo.addEventListener("click", () => {
     console.log(displayContent)
 });
 
+
+// Operators
 let btnPlus = document.querySelector(".btn-plus");
 btnPlus.addEventListener("click", () => {
+    displayContentSplit = displayContent.split(" ");
+    if (displayContentSplit.length === 3) {
+        operandA = parseInt(displayContentSplit[0], 10);
+        operator = displayContentSplit[1]
+        operandB = parseInt(displayContentSplit[2], 10);
+        display.textContent = operate(operandA, operator, operandB)
+    }
     let number = document.createElement("div")
     number.textContent = ` + `;
     display.appendChild(number)
@@ -77,6 +83,13 @@ btnPlus.addEventListener("click", () => {
 
 let btnMinus = document.querySelector(".btn-minus");
 btnMinus.addEventListener("click", () => {
+     displayContentSplit = displayContent.split(" ");
+    if (displayContentSplit.length === 3) {
+        operandA = parseInt(displayContentSplit[0], 10);
+        operator = displayContentSplit[1]
+        operandB = parseInt(displayContentSplit[2], 10);
+        display.textContent = operate(operandA, operator, operandB)
+    }
     let number = document.createElement("div")
     number.textContent = ` - `;
     display.appendChild(number)
@@ -84,6 +97,8 @@ btnMinus.addEventListener("click", () => {
     console.log(displayContent)
 });
 
+
+// Other buttons
 let btnClear = document.querySelector(".btn-clear");
 btnClear.addEventListener("click", () => {
     display.textContent = "";
