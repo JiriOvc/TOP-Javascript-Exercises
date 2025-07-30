@@ -162,6 +162,9 @@ btnEqual.addEventListener("click", () => {
 
 let btnPoint = document.querySelector(".btn-point");
 btnPoint.addEventListener("click", () => {
+    if (displayContent.includes(".") && display.textContent.split(" ").length < 2){
+        return console.log("already has a dot")
+    }
     displayDigitOrOperator(".")
 });
 
