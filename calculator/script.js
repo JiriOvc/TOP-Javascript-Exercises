@@ -101,24 +101,36 @@ btnNine.addEventListener("click", () => {
 let btnPlus = document.querySelector(".btn-plus");
 btnPlus.addEventListener("click", () => {
     rollingOperator()
+    if (displayContentSplit[2] === "") {
+        return display.textContent = `${displayContentSplit[0]} ${displayContentSplit[1] = "+"} `
+    }
     displayDigitOrOperator(" + ")
 });
 
 let btnMinus = document.querySelector(".btn-minus");
 btnMinus.addEventListener("click", () => {
     rollingOperator()
+    if (displayContentSplit[2] === "") {
+        return display.textContent = `${displayContentSplit[0]} ${displayContentSplit[1] = "-"} `
+    }
     displayDigitOrOperator(" - ")
 });
 
 let btnMultiply = document.querySelector(".btn-multiply");
 btnMultiply.addEventListener("click", () => {
     rollingOperator()
+     if (displayContentSplit[2] === "") {
+        return display.textContent = `${displayContentSplit[0]} ${displayContentSplit[1] = "*"} `
+    }
     displayDigitOrOperator(" * ")
 });
 
 let btnDivide = document.querySelector(".btn-divide");
 btnDivide.addEventListener("click", () => {
     rollingOperator()
+     if (displayContentSplit[2] === "") {
+        return display.textContent = `${displayContentSplit[0]} ${displayContentSplit[1] = "/"} `
+    }
     displayDigitOrOperator(" / ")
 });
 
