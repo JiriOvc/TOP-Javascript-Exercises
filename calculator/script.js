@@ -84,7 +84,7 @@ btnFive.addEventListener("click", () => {
 
 let btnSix = document.querySelector(".btn-six");
 btnSix.addEventListener("click", () => {
-    checkForResult
+    checkForResult()
     displayDigitOrOperator(6)
 });
 
@@ -103,6 +103,7 @@ btnEight.addEventListener("click", () => {
 let btnNine = document.querySelector(".btn-nine");
 btnNine.addEventListener("click", () => {
     checkForResult()
+    console.log(displayContentSplit)
     displayDigitOrOperator(9)
 });
 
@@ -149,13 +150,14 @@ btnDivide.addEventListener("click", () => {
 let btnClear = document.querySelector(".btn-clear");
 btnClear.addEventListener("click", () => {
     display.textContent = "";
+    displayContent = "";
     displayContentSplit = "";
 });
 
 let btnEqual = document.querySelector(".btn-equal");
 btnEqual.addEventListener("click", () => {
     calculate();
-    displayContentSplit = " ";
+    displayContentSplit = "result";
 });
 
 let btnPoint = document.querySelector(".btn-point");
@@ -173,6 +175,8 @@ function calculate() {
 
     if (!operator) {
         return display.textContent = operandA
+    } else if (!operandA) {
+        return display.textContent = `Error`
     } else if (!operandB) {
         return display.textContent = `Error`
     } else if (operandB === 0 && operator === "/") {
@@ -197,8 +201,9 @@ function displayDigitOrOperator(digitOrOperator) {
     console.log(displayContent)
 }
 
-function checkForResult() {
-    if (displayContentSplit === " ") {
-        display.textContent = ""
+function checkForResult(digit) {
+    if (displayContentSplit === "result") {
+        display.textContent = "";
+        displayContentSplit = digit;
     }
 }
