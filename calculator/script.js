@@ -210,3 +210,144 @@ function checkForResult(digit) {
         displayContentSplit = digit;
     }
 }
+
+// Keyboard support
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 96) {
+    checkForResult()
+    displayDigitOrOperator(0)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 97) {
+    checkForResult()
+    displayDigitOrOperator(1)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 98) {
+    checkForResult()
+    displayDigitOrOperator(2)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 99) {
+    checkForResult()
+    displayDigitOrOperator(3)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 100) {
+    checkForResult()
+    displayDigitOrOperator(4)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 101) {
+    checkForResult()
+    displayDigitOrOperator(5)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 102) {
+    checkForResult()
+    displayDigitOrOperator(6)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 103) {
+    checkForResult()
+    displayDigitOrOperator(7)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 104) {
+    checkForResult()
+    displayDigitOrOperator(8)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 105) {
+    checkForResult()
+    displayDigitOrOperator(9)
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 107) {
+    rollingOperator()
+    if (displayContentSplit[2] === "") {
+        return display.textContent = `${displayContentSplit[0]} ${displayContentSplit[1] = "+"} `
+    }
+    displayDigitOrOperator(" + ")
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 13) {
+    calculate();
+    displayContentSplit = "result";
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 109) {
+    rollingOperator()
+    if (displayContentSplit[2] === "") {
+        return display.textContent = `${displayContentSplit[0]} ${displayContentSplit[1] = "-"} `
+    }
+    displayDigitOrOperator(" - ")
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 106) {
+    rollingOperator()
+    if (displayContentSplit[2] === "") {
+        return display.textContent = `${displayContentSplit[0]} ${displayContentSplit[1] = "*"} `
+    }
+    displayDigitOrOperator(" * ")
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 111) {
+    rollingOperator()
+    if (displayContentSplit[2] === "") {
+        return display.textContent = `${displayContentSplit[0]} ${displayContentSplit[1] = "/"} `
+    }
+    displayDigitOrOperator(" / ")
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 110) {
+    if (displayContent.includes(".") && display.textContent.split(" ").length < 2){
+        return console.log("already has a dot")
+    }
+    displayDigitOrOperator(".")
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if (event.keyCode === 46) {
+    display.textContent = "";
+    displayContent = "";
+    displayContentSplit = "";
+    }
+})
+
+document.addEventListener("keyup", event => {
+    console.log(event.keyCode)
+})
+
