@@ -23,44 +23,75 @@
 .container {
     width: 100vw;
     height: 100vh;
-    background-color: salmon;
+    background-color: rgb(78, 85, 85);;
 }
 
 .calculator-outer {
-    border: 1px solid black;
-    width: 400px;
-    height: 600px;
-    background-color: lightgray;
+    border-radius: 20px;
+    width: 330px;
+    height: 560px;
+    background: #4bcbeb;
+    background: linear-gradient(314deg, rgba(75, 203, 235, 0.2) 26%, rgba(209, 242, 255, 0.3) 81%);
 }
 
 .calculator-inner {
-    width: 330px;
+    width: 320px;
     height: 520px;
-    background-color: lightgray;
-    justify-content: space-between;
+    justify-content: space-around;
+    /* border: 1px solid red; */
 }
 
 .display-area {
-    border: 1px solid black;
-    width: 320px;
-    height: 80px;
+    width: 300px;
+    height: 100px;
     font-size: 4em;
     justify-content: flex-end;
     padding-right: 10px;
     overflow-x: auto;
-    background-color: black;
-    color: lime;
+    color: white;
     font-family: monospace;
+   /*  border: 1px solid lime; */
 }
 
 .button-area {
-    border: 1px solid black;
+    /* border: 1px solid red; */
     width: 320px;
     height: 400px;
 }
 
+.button-area-left {
+    /* border: 1px solid red; */
+    flex-wrap: wrap-reverse;
+    height: 350px;
+}
+
+.button-area-right {
+    /* border: 1px solid red; */
+    flex-wrap: wrap-reverse;
+    height: 350px;
+    padding-right: 5px;
+}
+
 .btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5em;
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    margin: 3px;
+    background: #e8e8e8;
+    background: linear-gradient(200deg, rgba(232, 232, 232, 0.6) 14%, rgba(155, 171, 171, 0.6) 75%);
+    color: rgba(255, 255, 255, 0.573);
+    border-radius: 20px;
+    border: none;
+}
+
+.btn-zero {
+    width: 126px;
+}
+
+.btn-clear {
+    width: 192px;
+}
+
+.btn-operator {
+    color: rgb(255, 255, 255)
 }

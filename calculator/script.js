@@ -178,9 +178,9 @@ function calculate() {
 
     if (!operator) {
         return display.textContent = operandA
-    } else if (!operandA) {
+    } else if (!operandA && operandA != 0) {
         return display.textContent = `Error`
-    } else if (!operandB) {
+    } else if (!operandB && operandB != 0) {
         return display.textContent = `Error`
     } else if (operandB === 0 && operator === "/") {
         display.textContent = "Critical hit!"
